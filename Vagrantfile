@@ -3,6 +3,7 @@ Vagrant.configure("2") do |config|
 		web.vm.box = "ubuntu/focal64"
 		web.vm.network "forwarded_port", id: "ssh", host: 2223, guest: 22
 		web.vm.network "forwarded_port", id: "http", host: 8080, guest: 80
+#               load page NGINX http://localhost:8080
 		web.vm.network "forwarded_port", id: "https", host: 8443, guest: 443
 		web.vm.network "private_network", ip: "192.168.10.10", virtualbox__intnet: true
 		web.vm.hostname = "server-ubuntu"
